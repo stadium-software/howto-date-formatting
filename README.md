@@ -21,7 +21,6 @@ The code snippets section in the Stadium Expression Editor contain a variety of 
 
 To format a date, we first need to call the DayJS function to turn the string into a JavaScript date. DayJS can handle a wide range of input formats. 
 
-Examples:
 ```javascript
 dayjs('2018-04-04T16:00:00.000Z')
 dayjs('2018-04-13 19:18:17.040+02:00')
@@ -32,7 +31,6 @@ dayjs('2018-04-13 19:18')
 
 Once our string is a valid Javascript date, we can define a format: 
 
-Examples:
 ```javascript
 dayjs('2019-01-25').format('DD/MM/YYYY')
 dayjs('2019-25-01').format('DD-MM-YYYY')
@@ -43,7 +41,6 @@ dayjs('2019-25-01').format('YYYY-DD-MM')
 
 When a date is not understood and cannot be converted, DayJS returns the string "Invalid Date". In such cases, we can pass the format to DayJS together with the date: 
 
-Examples:
 ```javascript
 dayjs('2019-01-25', 'YYYY-MM-DD')
 dayjs('25-01-2925', 'DD-MM-YYYY')
@@ -96,7 +93,6 @@ The DatePicker control gets it's date format from a settings file on the Stadium
 
 Many date formats are automatically converted to the DatePicker format, others need to be converted in an expression before being passed to a DatePicker control. 
 
-Example:
 ```javascript
 dayjs('19/01/2025', 'DD/MM/YYYY').format('YYYY/MM/DD')
 ```
