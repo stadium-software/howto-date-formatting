@@ -1,10 +1,23 @@
-# How-To: Formatting Dates <!-- omit in toc -->
+# How-To: Working With Dates <!-- omit in toc -->
 
 In Stadium controls, we can manipulate a wide range of values in expressions. To format dates, we can use the [DayJS date library](https://day.js.org/en/). DayJS is a JavaScript library that parses, validates, manipulates, and displays dates and times for modern browsers. 
 
-The code snippets section in the Stadium Expression Editor contain a variety of additional options for manipulating dates as well as other data types. 
+## Table Of Contents <!-- omit in toc -->
+- [Expression Editor](#expression-editor)
+- [Converting Strings to Dates](#converting-strings-to-dates)
+- [Defining Date Formats](#defining-date-formats)
+- [Unupported Date Formats](#unupported-date-formats)
+- [DayJS Formatting Guide](#dayjs-formatting-guide)
+- [DatePicker Control](#datepicker-control)
+- [DataGrid Dates](#datagrid-dates)
+
+## Expression Editor
+
+The code snippets section in the Stadium Expression Editor contain a variety of entries for manipulating dates as well as other data types. 
 
 ![](images/ExpressionEditor.png)
+
+## Converting Strings to Dates
 
 To format a date, we first need to call the DayJS function to turn the string into a JavaScript date. DayJS can handle a wide range of input formats. 
 
@@ -15,6 +28,8 @@ dayjs('2018-04-13 19:18:17.040+02:00')
 dayjs('2018-04-13 19:18')
 ```
 
+## Defining Date Formats
+
 Once our string is a valid Javascript date, we can define a format: 
 
 Examples:
@@ -23,6 +38,20 @@ dayjs('2019-01-25').format('DD/MM/YYYY')
 dayjs('2019-25-01').format('DD-MM-YYYY')
 dayjs('2019-25-01').format('YYYY-DD-MM')
 ```
+
+## Unupported Date Formats
+
+When a date is not understood and cannot be converted, DayJS returns the string "Invalid Date". In such cases, we can pass the format to DayJS together with the date: 
+
+Examples:
+```javascript
+dayjs('2019-01-25', 'YYYY-MM-DD')
+dayjs('25-01-2925', 'DD-MM-YYYY')
+dayjs('2019-01-11', 'YYYY-DD-MM')
+dayjs('2019-01-11', 'YYYY-MM-DD')
+```
+
+## DayJS Formatting Guide
 
 The [DayJS date formatting guide](https://day.js.org/docs/en/display/format#list-of-all-available-formats) provides a wide range of options for reformatting dates. 
 
@@ -55,4 +84,22 @@ List of all available formats
 |ZZ |	+0500 |	The offset from UTC, ±HHmm|
 |A |	AM |	PM	|
 |a |	am |	pm	|
+
+## DatePicker Control
+
+The DatePicker control gets it's date format from a settings file on the Stadium Application Server (SAM). By default Stadium applications use the following format in the DatePicker:
+
+```javascript
+'YYYY/MM/DD'
+'2019/01/18'
+```
+
+Many date formats are automatically converted to the DatePicker format, others need to be converted in an expression before being passed to a DatePicker control. 
+
+Example:
+```javascript
+dayjs('19/01/2025', 'DD/MM/YYYY').format('YYYY/MM/DD')
+```
+
+## DataGrid Dates
 
