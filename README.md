@@ -29,7 +29,7 @@ dayjs('2018-04-13 19:18')
 
 ## Defining Date Formats
 
-Once our string is a valid Javascript date, we can define a format: 
+Once our string is a valid Javascript date, we can define a format for it: 
 
 ```javascript
 dayjs('2019-01-25').format('DD/MM/YYYY')
@@ -99,3 +99,6 @@ dayjs('19/01/2025', 'DD/MM/YYYY').format('YYYY/MM/DD')
 
 ## DataGrid Dates
 
+Data that is retrieved using connectors is processed by .NET before it is passed to the browser. .NET can handle more date formats than Javascript. 
+
+DateTime values are converted to Dates unless they are passed to the DataGrid as Strings. 
