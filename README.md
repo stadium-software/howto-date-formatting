@@ -2,7 +2,7 @@
 
 In Stadium controls, we can manipulate a wide range of values in expressions. To format dates, we can use the [DayJS date library](https://day.js.org/en/). DayJS is a JavaScript library that parses, validates, manipulates, and displays dates and times for modern browsers. 
 
-Due to the large variety of date formats in use around the world, it is impossible to determine the compatibility of any specific format with Stadium controls that display and handle dates. You will need to evaluate the date format used in an application in the context of each specific implementation. 
+Due to the large variety of date formats in use, it is impossible to determine the compatibility of any specific format with Stadium controls that display and handle dates here. Each format needs to be evaluated in the context of a specific implementation. 
 
 ## Table Of Contents <!-- omit in toc -->
 - [Expression Editor](#expression-editor)
