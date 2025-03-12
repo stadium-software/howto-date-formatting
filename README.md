@@ -95,7 +95,7 @@ The DatePicker control gets it's date format from a settings file on the Stadium
 '2019/01/18'
 ```
 
-Some dates are automatically converted to the DatePicker format, others need to be converted in an expression before being passed to a DatePicker control. How the DatePicker handles the date format used in a specific application needs to be evaluated in that implementation. 
+Some dates are automatically converted to the DatePicker format, others need to be converted in an expression before being passed to a DatePicker control. How the DatePicker handles the date format used in a specific application needs to be evaluated in the context of that implementation. 
 
 ```javascript
 dayjs('19/01/2025', 'DD/MM/YYYY').format('YYYY/MM/DD')
@@ -112,7 +112,7 @@ The DataGrid control gets it's date format from a settings file on the Stadium A
 '2019/01/18'
 ```
 
-The DataGrid natively also understands dates in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601). DateTime values passed to the DataGrid in this format are automatically converted to Dates before they are displayed. 
+The DataGrid also natively understands dates in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601). DateTime values passed to the DataGrid in this format are automatically converted to Dates before they are displayed. 
 
 ### Display
 
@@ -122,6 +122,8 @@ Dates can be converted in the Mapping Editor before they are displayed in a Data
 
 ### Search
 
-[Lucene](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html) is a library created and maintained by the Apache Software Foundation that Stadium uses to index and search DataGrid data. When searching DataGrids, Stadium passes the search string to Lucene and displays the data it returns in the DataGrid or an error below the search box. 
+[Lucene](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html) is a library created and maintained by the Apache Software Foundation that Stadium uses to index and search DataGrid data. When searching DataGrids, Stadium passes the search string to Lucene and displays either the data it returns in the DataGrid or an error below the search box. 
 
-Lucene has it's [own syntax](https://docs.stadium.software/controls/data-grid-search#dates) to enable date searches. It also natively understands dates in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601). How it handles other date formats is not described in the documentation and needs to be evaluated in the context of each specific implementation. 
+Lucene has it's [own syntax](https://docs.stadium.software/controls/data-grid-search#dates) to enable date searches and also natively understands dates in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601). How it handles other date formats is not described in the documentation and needs to be evaluated in the context of each specific implementation. 
+
+While Lucene takes time into account when searching and returning data, including time in a date search does not appear possible. 
