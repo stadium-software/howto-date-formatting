@@ -10,16 +10,18 @@ In Stadium controls, we can manipulate a wide range of values in expressions. To
 - [DayJS Formatting Guide](#dayjs-formatting-guide)
 - [DatePicker Control](#datepicker-control)
 - [DataGrid Dates](#datagrid-dates)
+  - [Display](#display)
+  - [Search](#search)
 
 ## Expression Editor
 
-The code snippets section in the Stadium Expression Editor contain a variety of entries for manipulating dates as well as other data types. 
+The code snippets section in the Stadium Expression Editor contain a variety of entries for manipulating various data types, including dates. 
 
 ![](images/ExpressionEditor.png)
 
 ## Converting Strings to Dates
 
-To format a date, we first need to call the DayJS function to turn the string into a JavaScript date. DayJS can handle a wide range of input formats. 
+To format a date, we usually need to first call the DayJS function to turn the string into a JavaScript date. DayJS can handle a wide range of input formats. 
 
 ```javascript
 dayjs('2018-04-04T16:00:00.000Z')
@@ -29,7 +31,7 @@ dayjs('2018-04-13 19:18')
 
 ## Defining Date Formats
 
-Once our string is a valid Javascript date, we can define a format for it: 
+Once our string is a valid Javascript date, we can define an output format for it: 
 
 ```javascript
 dayjs('2019-01-25').format('DD/MM/YYYY')
@@ -39,7 +41,9 @@ dayjs('2019-25-01').format('YYYY-DD-MM')
 
 ## Unupported Date Formats
 
-When a date is not understood and cannot be converted, DayJS returns the string "Invalid Date". In such cases, we can pass the format to DayJS together with the date: 
+When a date is not understood by DayJS it cannot be converted. In such cases DayJS returns the string **"Invalid Date"**. 
+
+This problem is solved by passing the format of the date to DayJS: 
 
 ```javascript
 dayjs('2019-01-25', 'YYYY-MM-DD')
@@ -84,21 +88,40 @@ List of all available formats
 
 ## DatePicker Control
 
-The DatePicker control gets it's date format from a settings file on the Stadium Application Server (SAM). By default Stadium applications use the following format in the DatePicker:
+The DatePicker control gets it's date format from a settings file on the Stadium Application Server (SAM). By default Stadium applications use the following format in the DatePicker: 
 
 ```javascript
 'YYYY/MM/DD'
 '2019/01/18'
 ```
 
-Many date formats are automatically converted to the DatePicker format, others need to be converted in an expression before being passed to a DatePicker control. 
+Some dates are automatically converted to the DatePicker format, others need to be converted in an expression before being passed to a DatePicker control. 
 
 ```javascript
 dayjs('19/01/2025', 'DD/MM/YYYY').format('YYYY/MM/DD')
+dayjs('01-19-2025', 'MM-DD-YYYY').format('YYYY/MM/DD')
+dayjs('14.12.2025', 'DD.MM.YYYY').format('YYYY/MM/DD')
 ```
 
 ## DataGrid Dates
 
-Data that is retrieved using connectors is processed by .NET before it is passed to the browser. .NET can handle more date formats than Javascript. 
+The DataGrid control gets it's date format from a settings file on the Stadium Application Server (SAM). By default Stadium applications use the following format in the DataGrid: 
 
-DateTime values are converted to Dates unless they are passed to the DataGrid as Strings. 
+```javascript
+'YYYY/MM/DD'
+'2019/01/18'
+```
+
+The DataGrid natively also understands dates in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601). DateTime values passed to the DataGrid in this format are automatically converted to Dates before they are displayed. 
+
+### Display
+
+Dates can be converted in the Mapping Editor before they are displayed in a DataGrid. 
+
+![](images/MappingEditor.png)
+
+### Search
+
+[Lucene](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html) is a library created and maintained by the Apache Software Foundation that Stadium uses to index and search DataGrid data. When searching DataGrids, Stadium passes the search string to Lucene and displays the data it returns in the DataGrid or an error below the search box. 
+
+Lucene has it's [own syntax](https://docs.stadium.software/controls/data-grid-search#dates) to enable date searches. It also natively understands dates in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601). How it handles other date formats is not described in the documentation and needs to be evaluated in the context of each specific implementation. 
