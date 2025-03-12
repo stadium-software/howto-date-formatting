@@ -43,7 +43,7 @@ dayjs('2019-25-01').format('YYYY-DD-MM')
 
 ## Unupported Date Formats
 
-When a date is not understood by DayJS it cannot be converted. In such cases DayJS returns the string **"Invalid Date"**. This problem is solved by passing the format of the date to DayJS: 
+When a date is not understood by DayJS it returns the string **"Invalid Date"**. This problem can be overcome by passing the format of the date to DayJS: 
 
 ```javascript
 dayjs('2019-01-25', 'YYYY-MM-DD')
