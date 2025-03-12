@@ -2,6 +2,8 @@
 
 In Stadium controls, we can manipulate a wide range of values in expressions. To format dates, we can use the [DayJS date library](https://day.js.org/en/). DayJS is a JavaScript library that parses, validates, manipulates, and displays dates and times for modern browsers. 
 
+Due to the large variety of date formats in use around the world, it is impossible to determine the compatibility of any specific format with Stadium controls that display and handle dates. You will need to evaluate the date format used in an application in the context of each specific implementation. 
+
 ## Table Of Contents <!-- omit in toc -->
 - [Expression Editor](#expression-editor)
 - [Converting Strings to Dates](#converting-strings-to-dates)
@@ -41,9 +43,7 @@ dayjs('2019-25-01').format('YYYY-DD-MM')
 
 ## Unupported Date Formats
 
-When a date is not understood by DayJS it cannot be converted. In such cases DayJS returns the string **"Invalid Date"**. 
-
-This problem is solved by passing the format of the date to DayJS: 
+When a date is not understood by DayJS it cannot be converted. In such cases DayJS returns the string **"Invalid Date"**. This problem is solved by passing the format of the date to DayJS: 
 
 ```javascript
 dayjs('2019-01-25', 'YYYY-MM-DD')
@@ -95,7 +95,7 @@ The DatePicker control gets it's date format from a settings file on the Stadium
 '2019/01/18'
 ```
 
-Some dates are automatically converted to the DatePicker format, others need to be converted in an expression before being passed to a DatePicker control. 
+Some dates are automatically converted to the DatePicker format, others need to be converted in an expression before being passed to a DatePicker control. How the DatePicker handles the date format used in a specific application needs to be evaluated in that implementation. 
 
 ```javascript
 dayjs('19/01/2025', 'DD/MM/YYYY').format('YYYY/MM/DD')
