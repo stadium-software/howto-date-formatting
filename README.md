@@ -33,7 +33,7 @@ dayjs('2018-04-13 19:18')
 
 ## Defining Date Formats
 
-Once our string is a valid Javascript date, we can define an output format for it: 
+Once a string has been converted to a valid Javascript date, we can define an output format for it: 
 
 ```javascript
 dayjs('2019-01-25').format('DD/MM/YYYY')
