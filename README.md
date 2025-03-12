@@ -126,4 +126,4 @@ Dates can be converted in the Mapping Editor before they are displayed in a Data
 
 Lucene has it's [own syntax](https://docs.stadium.software/controls/data-grid-search#dates) to enable date searches and also natively understands dates in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601). How it handles other date formats is not described in the documentation and needs to be evaluated in the context of each specific implementation. 
 
-While Lucene takes time into account when searching and returning data, including time in a date search does not appear possible. 
+While Lucene takes time into account for date-specific searches, including time in a date search string does not appear possible. 
