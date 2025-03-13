@@ -23,7 +23,7 @@ The code snippets section in the Stadium Expression Editor contain a variety of 
 
 ## Converting Strings to Dates
 
-DayJS can handle a wide range of input formats, but to make sure it understands a date, we usually need to first call the DayJS wrapper. DayJS returns the string **"Invalid Date"** when a date is not understood.
+DayJS can handle a wide range of input formats, but to make sure it understands a date, we need to call the DayJS wrapper. DayJS returns the string **"Invalid Date"** when a date is not understood.
 
 ```javascript
 dayjs('2018-04-04T16:00:00.000Z')
