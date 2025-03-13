@@ -23,7 +23,7 @@ The code snippets section in the Stadium Expression Editor contain a variety of 
 
 ## Converting Strings to Dates
 
-To format a date, we usually need to first call the DayJS function to turn the string into a JavaScript date. DayJS can handle a wide range of input formats. 
+DayJS can handle a wide range of input formats, but to make sure it understands a date, we usually need to first call the DayJS wrapper. DayJS returns returns the string **"Invalid Date"** when a date is not understood.
 
 ```javascript
 dayjs('2018-04-04T16:00:00.000Z')
@@ -43,7 +43,7 @@ dayjs('2019-25-01').format('YYYY-DD-MM')
 
 ## Unupported Date Formats
 
-DayJS returns returns the string **"Invalid Date"** when a date is not understood. This problem can be overcome by passing the format of the date to DayJS: 
+When DayJS returns **"Invalid Date"** we can pass the format of the date to DayJS: 
 
 ```javascript
 dayjs('2019-01-25', 'YYYY-MM-DD')
