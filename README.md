@@ -120,7 +120,7 @@ The DataGrid natively understands dates in [ISO 8601](https://en.wikipedia.org/w
 
 ### Search
 
-[Lucene](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html) is a library created and maintained by the Apache Software Foundation that Stadium uses to index and search DataGrid data. When searching DataGrids, Stadium passes the search string to Lucene and displays either the data it returns in the DataGrid or an error below the search box. 
+Stadium uses [Lucene](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html) to index and search DataGrid data. When searching DataGrids, Stadium passes the search string to Lucene and displays either the data it returns in the DataGrid or an error below the search box. 
 
 Lucene has it's [own syntax](https://docs.stadium.software/controls/data-grid-search#dates) to enable date searches and also natively understands dates in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601). How it handles other date formats is not described in the documentation and needs to be evaluated in the context of each specific implementation. 
 
