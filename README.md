@@ -116,7 +116,7 @@ The DataGrid also natively understands dates in [ISO 8601](https://en.wikipedia.
 
 ### Display
 
-Dates can be converted in the Mapping Editor before they are displayed in a DataGrid. 
+In the Mapping Editor dates can be manipulated before they are displayed in a DataGrid. 
 
 ![](images/MappingEditor.png)
 
