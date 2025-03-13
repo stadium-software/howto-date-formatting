@@ -112,11 +112,11 @@ The DataGrid control gets it's date format from a settings file on the Stadium A
 '2019/01/18'
 ```
 
-The DataGrid also natively understands dates in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601). DateTime values passed to the DataGrid in this format are automatically converted to Dates before they are displayed. 
+The DataGrid also natively understands dates in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601). 
 
 ### Display
 
-In the Mapping Editor dates can be manipulated before they are displayed in a DataGrid. 
+In the Mapping Editor dates can be manipulated before they are displayed in a DataGrid. By default, DateTime values are automatically converted to Dates before they are shown, however, using DayJS, we can instruct the DataGrid to also display time. 
 
 ![](images/MappingEditor.png)
 
