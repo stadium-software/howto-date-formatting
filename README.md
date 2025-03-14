@@ -88,14 +88,12 @@ List of all available formats
 
 ## DatePicker Control
 
-The DatePicker control gets it's date format from a settings file on the Stadium Application Server (SAM). By default Stadium applications use the following format in the DatePicker: 
+The DatePicker.Date property accepts DayJS dates as well as Javascript dates. It gets it's date format from a settings file on the Stadium Application Server (SAM). By default Stadium applications use the following format in the DatePicker: 
 
 ```javascript
 'YYYY/MM/DD'
 '2019/01/18'
 ```
-
-The DatePicker.Date property accepts DayJS dates as well as Javascript dates and returns a DayJS date. Use DayJS to manipulate dates returned by the DatePicker.Date property. 
 
 Some dates are automatically converted to the DatePicker format by the DatePicker.Date property while others need to be converted in an expression first. How the DatePicker handles the date format used in a specific application needs to be evaluated in the context of that implementation. 
 
@@ -104,6 +102,8 @@ dayjs('19/01/2025', 'DD/MM/YYYY').format('YYYY/MM/DD')
 dayjs('01-19-2025', 'MM-DD-YYYY').format('YYYY/MM/DD')
 dayjs('14.12.2025', 'DD.MM.YYYY').format('YYYY/MM/DD')
 ```
+
+The DatePicker.Date property returns a DayJS date. Use DayJS to manipulate dates returned by the DatePicker.Date property. 
 
 ## DataGrid Dates
 
