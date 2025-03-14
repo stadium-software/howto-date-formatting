@@ -112,6 +112,8 @@ The DataGrid control gets it's date format from a settings file on the Stadium A
 '2019/01/18'
 ```
 
+The DatePicker.Date property accepts DayJS dates as well as Javascript dates and returns a DayJS date. Use DayJS to manipulate dates returned by the DatePicker.Date property. 
+
 ### Display
 
 The DataGrid natively understands dates in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601). By default, DateTime values are automatically converted to Dates before they are shown. In the Mapping Editor the format of dates can be manipulated before they are shown. 
