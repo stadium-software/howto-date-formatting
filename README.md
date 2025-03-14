@@ -103,7 +103,7 @@ dayjs('01-19-2025', 'MM-DD-YYYY').format('YYYY/MM/DD')
 dayjs('14.12.2025', 'DD.MM.YYYY').format('YYYY/MM/DD')
 ```
 
-The DatePicker.Date property returns a DayJS date. Use DayJS to manipulate dates returned by the DatePicker.Date property. 
+The DatePicker.Date property returns a DayJS date. If necessary, manipulate dates returned by the DatePicker.Date property with DayJS. 
 
 ## DataGrid Dates
 
