@@ -95,7 +95,9 @@ The DatePicker control gets it's date format from a settings file on the Stadium
 '2019/01/18'
 ```
 
-Some dates are automatically converted to the DatePicker format, others need to be converted in an expression before being passed to a DatePicker control. How the DatePicker handles the date format used in a specific application needs to be evaluated in the context of that implementation. 
+The DatePicker.Date property accepts DayJS dates as well as Javascript dates and returns a DayJS date. Use DayJS to manipulate dates returned by the DatePicker.Date property. 
+
+Some dates are automatically converted to the DatePicker format by the DatePicker.Date property while others need to be converted in an expression first. How the DatePicker handles the date format used in a specific application needs to be evaluated in the context of that implementation. 
 
 ```javascript
 dayjs('19/01/2025', 'DD/MM/YYYY').format('YYYY/MM/DD')
@@ -111,8 +113,6 @@ The DataGrid control gets it's date format from a settings file on the Stadium A
 'YYYY/MM/DD'
 '2019/01/18'
 ```
-
-The DatePicker.Date property accepts DayJS dates as well as Javascript dates and returns a DayJS date. Use DayJS to manipulate dates returned by the DatePicker.Date property. 
 
 ### Display
 
