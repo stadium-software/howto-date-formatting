@@ -1,6 +1,6 @@
 # How-To: Working With Dates <!-- omit in toc -->
 
-In Stadium, we can manipulate a wide range of values in expressions. Here we can also use plain Javascript or the [DayJS](https://day.js.org/en/) date library to format and manipulate dates in a number of different ways. This guide describes the most common needs and methods for working with dates in Stadium. 
+In Stadium, we can manipulate a wide range of values in expressions. Here we can also use plain Javascript or the [DayJS](https://day.js.org/en/) date library to format and manipulate dates in a number of different ways. This guide describes some useful methods for working with dates in Stadium. 
 
 Due to the large variety of date formats in use, it is impossible to determine the compatibility of all possible date formats with the Stadium controls that display and handle dates. Date formats must always be tested in the context of a specific implementations. 
 
